@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Plant ID Game - Field Botany</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        .game-container {
+            max-width: 800px;
+            margin: 40px auto;
+            text-align: center;
+        }
+
+        .plant-image-game {
+            width: 100%;
+            max-width: 500px;
+            height: 400px;
+            object-fit: cover;
+            object-position: center 25%;
+            clip-path: inset(0 0 27% 0);
+            border-radius: 10px;
+            margin: 20px auto;
+            display: block;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        .options-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 15px;
+            max-width: 600px;
+            margin: 30px auto;
+        }
+
+        .option-button {
+            padding: 20px;
+            font-size: 1.1em;
+            background-color: white;
+            border: 3px solid #7cb342;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .option-button:hover {
+            background-color: #e8f5e9;
+            transform: translateY(-2px);
+        }
+
+        .option-button.correct {
+            background-color: #4caf50;
+            color: white;
+            border-color: #2e7d32;
+        }
+
+        .option-button.incorrect {
+            background-color: #f44336;
+            color: white;
+            border-color: #c62828;
+        }
+
+        .feedback {
+            font-size: 1.5em;
+            font-weight: bold;
+            margin: 20px 0;
+            min-height: 40px;
+        }
+
+        .feedback.correct {
+            color: #4caf50;
+        }
+
+        .feedback.incorrect {
+            color: #f44336;
+        }
+
+        .score {
+            font-size: 1.2em;
+            color: #2e7d32;
+            margin-bottom: 20px;
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="resume.html">Resume</a>
+        <a href="index.html#naming">Naming Convention</a>
+        <a href="families.html">Browse by Family</a>
+        <a href="catalog.html">Plant Catalog</a>
+        <a href="game.html" class="active">Plant ID Game</a>
+    </nav>
+
+    <!-- Header Section -->
+    <div class="header-section">
+        <h1>Plant Identification Game</h1>
+        <p>Test your plant identification skills!</p>
+    </div>
+
+    <!-- Game Container -->
+    <div class="game-container">
+        <div class="score">Score: <span id="score">0</span></div>
+        
+        <img id="plantImage" class="plant-image-game" src="jpg/1blue_elderberry.jpg" alt="Identify this plant">
+        
+        <div class="feedback" id="feedback"></div>
+        
+        <div class="options-container" id="optionsContainer">
+            <button class="option-button" onclick="checkAnswer(0)">Option 1</button>
+            <button class="option-button" onclick="checkAnswer(1)">Option 2</button>
+            <button class="option-button" onclick="checkAnswer(2)">Option 3</button>
+            <button class="option-button" onclick="checkAnswer(3)">Option 4</button>
+        </div>
+    </div>
+
+    <script>
+        const plants = [
+{id:1,img:'jpg/1blue_elderberry.jpg',scientific:'Sambucus caerulea',name:'Blue elderberry'},
+{id:2,img:'jpg/2black_elderberry.jpg',scientific:'Sambucus nigra',name:'Black elderberry'},
+{id:3,img:'jpg/3burkwood_viburnum.jpg',scientific:'Viburnum × burkwoodii',name:'Burkwood viburnum'},
+{id:4,img:'jpg/4leatherleaf_viburnum.jpg',scientific:'Viburnum rhytidophyllum',name:'Leatherleaf viburnum'},
+{id:5,img:'jpg/5cranberry_bush.jpg',scientific:'Viburnum opulus',name:'Cranberry bush'},
+{id:6,img:'jpg/6saltbush.jpg',scientific:'Atriplex canescens',name:'Saltbush'},
+{id:7,img:'jpg/7smokebush.jpg',scientific:'Cotinus coggygria',name:'Smokebush'},
+{id:8,img:'jpg/8english_ivy.jpg',scientific:'Hedera helix',name:'English ivy'},
+{id:9,img:'jpg/9lily_turf.jpg',scientific:'Liriope muscari',name:'Lily turf'},
+{id:10,img:'jpg/10joshua_tree.jpg',scientific:'Yucca brevifolia',name:'Joshua tree'},
+{id:11,img:'jpg/11goldenrod.jpg',scientific:'Solidago canadensis',name:'Goldenrod'},
+{id:12,img:'jpg/12oregon_grape.jpg',scientific:'Berberis repens',name:'Oregon grape'},
+{id:13,img:'jpg/13heavenly_bamboo.jpg',scientific:'Nandina domestica',name:'Heavenly bamboo'},
+{id:14,img:'jpg/14thinleaf_alder.jpg',scientific:'Alnus incana',name:'Thinleaf alder'},
+{id:15,img:'jpg/15river_birch.jpg',scientific:'Betula occidentalis',name:'River birch'},
+{id:16,img:'jpg/16paper_birch.jpg',scientific:'Betula papyrifera',name:'Paper birch'},
+{id:17,img:'jpg/17american_hornbeam.jpg',scientific:'Carpinus caroliniana',name:'American hornbeam'},
+{id:18,img:'jpg/18hazelnut.jpg',scientific:'Corylus americana',name:'Hazelnut'},
+{id:19,img:'jpg/19trumpet_creeper.jpg',scientific:'Campsis radicans',name:'Trumpet creeper'},
+{id:20,img:'jpg/20desert_willow.jpg',scientific:'Chilopsis linearis',name:'Desert willow'},
+{id:21,img:'jpg/21boxwood.jpg',scientific:'Buxus sempervirens',name:'Boxwood'},
+{id:22,img:'jpg/22prickly_pear.jpg',scientific:'Opuntia spp.',name:'Prickly pear'},
+{id:23,img:'jpg/23common_hop.jpg',scientific:'Humulus lupulus',name:'Common hop'},
+{id:24,img:'jpg/24southern_bush_honeysuckle.jpg',scientific:'Diervilla sessilifolia',name:'Southern bush honeysuckle'},
+{id:25,img:'jpg/25beautybush.jpg',scientific:'Kolkwitzia amabilis',name:'Beautybush'},
+{id:26,img:'jpg/26common_snowberry.jpg',scientific:'Symphoricarpos albus',name:'Common snowberry'},
+{id:27,img:'jpg/27weigela.jpg',scientific:'Weigela florida',name:'Weigela'},
+{id:28,img:'jpg/28japanese_euonymus.jpg',scientific:'Euonymus japonicus',name:'Japanese euonymus'},
+{id:29,img:'jpg/29katsura_tree.jpg',scientific:'Cercidiphyllum japonicum',name:'Katsura tree'},
+{id:30,img:'jpg/30flowering_dogwood.jpg',scientific:'Cornus florida',name:'Flowering dogwood'},
+{id:31,img:'jpg/31redosier_dogwood.jpg',scientific:'Cornus sericea',name:'Redosier dogwood'},
+{id:32,img:'jpg/32incense_cedar.jpg',scientific:'Calocedrus decurrens',name:'Incense cedar'},
+{id:33,img:'jpg/33green_ephedra.jpg',scientific:'Ephedra viridis',name:'Green ephedra'},
+{id:34,img:'jpg/34mimosa.jpg',scientific:'Albizia julibrissin',name:'Mimosa'},
+{id:35,img:'jpg/35siberian_pea_shrub.jpg',scientific:'Caragana arborescens',name:'Siberian pea shrub'},
+{id:36,img:'jpg/36redbud.jpg',scientific:'Cercis canadensis',name:'Redbud'},
+{id:37,img:'jpg/37honey_locust.jpg',scientific:'Gleditsia triacanthos',name:'Honey locust'},
+{id:38,img:'jpg/38kentucky_coffee_tree.jpg',scientific:'Gymnocladus dioica',name:'Kentucky coffee tree'},
+{id:39,img:'jpg/39black_locust.jpg',scientific:'Robinia pseudoacacia',name:'Black locust'},
+{id:40,img:'jpg/40american_beech.jpg',scientific:'Fagus grandifolia',name:'American beech'},
+{id:41,img:'jpg/41sweet_gum.jpg',scientific:'Liquidambar styraciflua',name:'Sweet gum'},
+{id:42,img:'jpg/42golden_st_johnswort.jpg',scientific:'Hypericum frondosum',name:'Golden St. Johnswort'},
+{id:43,img:'jpg/43kalms_st_johnswort.jpg',scientific:'Hypericum kalmianum',name:'Kalms St. Johnswort'},
+{id:44,img:'jpg/44english_walnut.jpg',scientific:'Juglans regia',name:'English walnut'},
+{id:45,img:'jpg/45bluebeard.jpg',scientific:'Caryopteris × clandonensis',name:'Bluebeard'},
+{id:46,img:'jpg/46lavender.jpg',scientific:'Lavandula angustifolia',name:'Lavender'},
+{id:47,img:'jpg/47beebalm.jpg',scientific:'Monarda fistulosa',name:'Beebalm'},
+{id:48,img:'jpg/48woodland_sage.jpg',scientific:'Salvia nemorosa',name:'Woodland sage'},
+{id:49,img:'jpg/49russian_sage.jpg',scientific:'Salvia yangii',name:'Russian sage'},
+{id:50,img:'jpg/50magnolia.jpg',scientific:'Magnolia spp.',name:'Magnolia'},
+{id:51,img:'jpg/51rose_of_sharon.jpg',scientific:'Hibiscus syriacus',name:'Rose of Sharon'},
+{id:52,img:'jpg/52silver_linden.jpg',scientific:'Tilia tomentosa',name:'Silver linden'},
+{id:53,img:'jpg/53forsythia.jpg',scientific:'Forsythia suspensa',name:'Forsythia'},
+{id:54,img:'jpg/54green_ash.jpg',scientific:'Fraxinus pennsylvanica',name:'Green ash'},
+{id:55,img:'jpg/55guara.jpg',scientific:'Gaura lindheimeri',name:'Guara'},
+{id:56,img:'jpg/56colorado_fir.jpg',scientific:'Abies concolor',name:'Colorado fir'},
+{id:57,img:'jpg/57london_plane_tree.jpg',scientific:'Platanus × acerifolia',name:'London plane tree'},
+{id:58,img:'jpg/58blue_fescue.jpg',scientific:'Festuca glauca',name:'Blue fescue'},
+{id:59,img:'jpg/59old_mans_beard.jpg',scientific:'Clematis ligusticifolia',name:'Old mans beard'},
+{id:60,img:'jpg/60mountain_mahogany.jpg',scientific:'Cercocarpus ledifolius',name:'Mountain mahogany'},
+{id:61,img:'jpg/61quince.jpg',scientific:'Chaenomeles japonica',name:'Quince'},
+{id:62,img:'jpg/62willowleaf_cotoneaster.jpg',scientific:'Cotoneaster salicifolius repandens',name:'Willowleaf cotoneaster'},
+{id:63,img:'jpg/63hawthorn.jpg',scientific:'Crataegus sp.',name:'Hawthorn'},
+{id:64,img:'jpg/64shrubby_cinquefoil.jpg',scientific:'Dasiphora fruticosa',name:'Shrubby cinquefoil'},
+{id:65,img:'jpg/65apache_plume.jpg',scientific:'Fallugia paradoxa',name:'Apache plume'},
+{id:66,img:'jpg/66common_strawberry.jpg',scientific:'Fragaria × ananassa',name:'Common strawberry'},
+{id:67,img:'jpg/67apple.jpg',scientific:'Malus × domestica',name:'Apple'},
+{id:68,img:'jpg/68ninebark.jpg',scientific:'Physocarpus malvaceus',name:'Ninebark'},
+{id:69,img:'jpg/69purple_ninebark.jpg',scientific:'Physocarpus opulifolius',name:'Purple ninebark'},
+{id:70,img:'jpg/70potawami_plum.jpg',scientific:'Prunus americana',name:'Potawami plum'},
+{id:71,img:'jpg/71apricot.jpg',scientific:'Prunus armeniaca',name:'Apricot'},
+{id:72,img:'jpg/72plum.jpg',scientific:'Prunus domestica',name:'Plum'},
+{id:73,img:'jpg/73cherry_laurel.jpg',scientific:'Prunus laurocerasus',name:'Cherry laurel'},
+{id:74,img:'jpg/74peach.jpg',scientific:'Prunus persica',name:'Peach'},
+{id:75,img:'jpg/75flowering_cherry.jpg',scientific:'Prunus serrulata',name:'Flowering cherry'},
+{id:76,img:'jpg/76chokecherry.jpg',scientific:'Prunus virginiana',name:'Chokecherry'},
+{id:77,img:'jpg/77scarlet_firethorn.jpg',scientific:'Pyracantha coccinea',name:'Scarlet firethorn'},
+{id:78,img:'jpg/78bradford_pear.jpg',scientific:'Pyrus calleryana',name:'Bradford pear'},
+{id:79,img:'jpg/79pear.jpg',scientific:'Pyrus communis',name:'Pear'},
+{id:80,img:'jpg/80asian_pear.jpg',scientific:'Pyrus pyrifolia',name:'Asian pear'},
+{id:81,img:'jpg/81bumald_spirea.jpg',scientific:'Spiraea × bumalda',name:'Bumald spirea'},
+{id:82,img:'jpg/82snowmound.jpg',scientific:'Spiraea nipponica',name:'Snowmound'},
+{id:83,img:'jpg/83bridal_wealth.jpg',scientific:'Spiraea × vanhouttei',name:'Bridal wealth'},
+{id:84,img:'jpg/84narrowleaf_poplar.jpg',scientific:'Populus angustifolia',name:'Narrowleaf poplar'},
+{id:85,img:'jpg/85cottonwood.jpg',scientific:'Populus fremontii',name:'Cottonwood'},
+{id:86,img:'jpg/86quaking_aspen.jpg',scientific:'Populus tremuloides',name:'Quaking aspen'},
+{id:87,img:'jpg/87sandbar_willow.jpg',scientific:'Salix exigua',name:'Sandbar willow'},
+{id:88,img:'jpg/88corkscrew_willow.jpg',scientific:'Salix matsudana var. tortuosa',name:'Corkscrew willow'},
+{id:89,img:'jpg/89arctic_willow.jpg',scientific:'Salix purpurea',name:'Arctic willow'}];
+
+        let currentPlant;
+        let correctAnswer;
+        let score = 0;
+        let answered = false;
+
+        function loadNewPlant() {
+            answered = false;
+            document.getElementById('feedback').textContent = '';
+            document.getElementById('feedback').className = 'feedback';
+            
+            // Select random plant
+            currentPlant = plants[Math.floor(Math.random() * plants.length)];
+            const imgElement = document.getElementById('plantImage');
+            imgElement.src = currentPlant.img;
+            imgElement.onerror = function() {
+                console.log('Failed to load image: ' + currentPlant.img);
+            };
+            
+            // Generate 3 wrong answers
+            let options = [currentPlant];
+            while (options.length < 4) {
+                let randomPlant = plants[Math.floor(Math.random() * plants.length)];
+                if (!options.includes(randomPlant)) {
+                    options.push(randomPlant);
+                }
+            }
+            
+            // Shuffle options
+            options.sort(() => Math.random() - 0.5);
+            correctAnswer = options.indexOf(currentPlant);
+            
+            // Update buttons
+            const buttons = document.querySelectorAll('.option-button');
+            buttons.forEach((button, index) => {
+                button.textContent = options[index].name;
+                button.className = 'option-button';
+                button.disabled = false;
+            });
+        }
+
+        function checkAnswer(choice) {
+            if (answered) return;
+            
+            answered = true;
+            const buttons = document.querySelectorAll('.option-button');
+            const feedback = document.getElementById('feedback');
+            
+            if (choice === correctAnswer) {
+                buttons[choice].classList.add('correct');
+                score++;
+                document.getElementById('score').textContent = score;
+                
+                // Check if score is a multiple of 10
+                if (score % 10 === 0) {
+                    feedback.textContent = 'Good job! You learned ' + score + ' plants!';
+                } else {
+                    feedback.textContent = 'Correct!';
+                }
+                feedback.className = 'feedback correct';
+                
+                setTimeout(() => {
+                    loadNewPlant();
+                }, 1500);
+            } else {
+                buttons[choice].classList.add('incorrect');
+                feedback.textContent = 'Incorrect, try again!';
+                feedback.className = 'feedback incorrect';
+                answered = false;
+            }
+        }
+
+        // Load first plant
+        loadNewPlant();
+    </script>
+
+    <!-- Footer -->
+    <div class="footer">
+        <p>&copy; 2025 Field Botany Guide | Your gateway to plant identification</p>
+    </div>
+</body>
+</html>
+

@@ -1,0 +1,737 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Browse by Plant Family</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="index.html#naming">Naming Convention</a>
+        <a href="families.html" class="active">Browse by Family</a>
+        <a href="catalog.html">Plant Catalog</a>
+        <a href="game.html">Plant ID Game</a>
+        <a href="Resume/index_Version2.html">Resume</a>
+    </nav>
+
+    <!-- Header Section -->
+    <div class="header-section">
+        <h1>Browse Plants by Family</h1>
+        <p>Select a plant family to view all genus and species</p>
+    </div>
+
+    <!-- Main Content -->
+    <div class="main-content">
+        <h2>Plant Families</h2>
+        <p>Click on any family name to see the genera, then click a genus to see all species within it.</p>
+
+        <!-- Family: Adoxaceae -->
+        <div class="family-section">
+            <h3 class="family-name" onclick="toggleFamily('adoxaceae')">Adoxaceae ▼</h3>
+            <div id="adoxaceae" class="family-content" style="display: none;">
+                <div class="genus-section">
+                    <h4 class="genus-name" onclick="toggleGenus('sambucus')">Genus: Sambucus ▼</h4>
+                    <ul id="sambucus" class="species-list" style="display: none;">
+                        <li><a href="catalog.html#plant-1"><em>Sambucus caerulea</em> - Blue elderberry</a></li>
+                        <li><a href="catalog.html#plant-2"><em>Sambucus nigra</em> - Black elderberry</a></li>
+                    </ul>
+                </div>
+                <div class="genus-section">
+                    <h4 class="genus-name" onclick="toggleGenus('viburnum')">Genus: Viburnum ▼</h4>
+                    <ul id="viburnum" class="species-list" style="display: none;">
+                        <li><a href="catalog.html#plant-3"><em>Viburnum × burkwoodii</em> - Burkwood viburnum</a></li>
+                        <li><a href="catalog.html#plant-4"><em>Viburnum rhytidophyllum</em> - Leatherleaf viburnum</a></li>
+                        <li><a href="catalog.html#plant-5"><em>Viburnum opulus</em> - Cranberry bush</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- Family: Amaranthaceae -->
+        <div class="family-section">
+            <h3 class="family-name" onclick="toggleFamily('amaranthaceae')">Amaranthaceae ▼</h3>
+            <div id="amaranthaceae" class="family-content" style="display: none;">
+                <div class="genus-section">
+                    <h4 class="genus-name" onclick="toggleGenus('atriplex')">Genus: Atriplex ▼</h4>
+                    <ul id="atriplex" class="species-list" style="display: none;">
+                        <li><a href="catalog.html#plant-6"><em>Atriplex canescens</em> - Saltbush</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- Family: Anacardiaceae -->
+        <div class="family-section">
+            <h3 class="family-name" onclick="toggleFamily('anacardiaceae')">Anacardiaceae ▼</h3>
+            <div id="anacardiaceae" class="family-content" style="display: none;">
+                <div class="genus-section">
+                    <h4 class="genus-name" onclick="toggleGenus('cotinus')">Genus: Cotinus ▼</h4>
+                    <ul id="cotinus" class="species-list" style="display: none;">
+                        <li><a href="catalog.html#plant-7"><em>Cotinus coggygria</em> - Smokebush</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- Family: Araliaceae -->
+        <div class="family-section">
+            <h3 class="family-name" onclick="toggleFamily('araliaceae')">Araliaceae ▼</h3>
+            <div id="araliaceae" class="family-content" style="display: none;">
+                <div class="genus-section">
+                    <h4 class="genus-name" onclick="toggleGenus('hedera')">Genus: Hedera ▼</h4>
+                    <ul id="hedera" class="species-list" style="display: none;">
+                        <li><a href="catalog.html#plant-8"><em>Hedera helix</em> - English ivy</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- Family: Asparagaceae -->
+        <div class="family-section">
+            <h3 class="family-name" onclick="toggleFamily('asparagaceae')">Asparagaceae ▼</h3>
+            <div id="asparagaceae" class="family-content" style="display: none;">
+                <div class="genus-section">
+                    <h4 class="genus-name" onclick="toggleGenus('liriope')">Genus: Liriope ▼</h4>
+                    <ul id="liriope" class="species-list" style="display: none;">
+                        <li><a href="catalog.html#plant-9"><em>Liriope muscari</em> - Lily turf</a></li>
+                    </ul>
+                </div>
+                <div class="genus-section">
+                    <h4 class="genus-name" onclick="toggleGenus('yucca')">Genus: Yucca ▼</h4>
+                    <ul id="yucca" class="species-list" style="display: none;">
+                        <li><a href="catalog.html#plant-10"><em>Yucca brevifolia</em> - Joshua tree</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- Family: Asteraceae -->
+        <div class="family-section">
+            <h3 class="family-name" onclick="toggleFamily('asteraceae')">Asteraceae ▼</h3>
+            <div id="asteraceae" class="family-content" style="display: none;">
+                <div class="genus-section">
+                    <h4 class="genus-name" onclick="toggleGenus('solidago')">Genus: Solidago ▼</h4>
+                    <ul id="solidago" class="species-list" style="display: none;">
+                        <li><a href="catalog.html#plant-11"><em>Solidago canadensis</em> - Goldenrod</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- Family: Berberidaceae -->
+        <div class="family-section">
+            <h3 class="family-name" onclick="toggleFamily('berberidaceae')">Berberidaceae ▼</h3>
+            <div id="berberidaceae" class="family-content" style="display: none;">
+                <div class="genus-section">
+                    <h4 class="genus-name" onclick="toggleGenus('berberis')">Genus: Berberis ▼</h4>
+                    <ul id="berberis" class="species-list" style="display: none;">
+                        <li><a href="catalog.html#plant-12"><em>Berberis repens</em> - Oregon grape</a></li>
+                    </ul>
+                </div>
+                <div class="genus-section">
+                    <h4 class="genus-name" onclick="toggleGenus('nandina')">Genus: Nandina ▼</h4>
+                    <ul id="nandina" class="species-list" style="display: none;">
+                        <li><a href="catalog.html#plant-13"><em>Nandina domestica</em> - Heavenly bamboo</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- Family: Betulaceae -->
+        <div class="family-section">
+            <h3 class="family-name" onclick="toggleFamily('betulaceae')">Betulaceae ▼</h3>
+            <div id="betulaceae" class="family-content" style="display: none;">
+                <div class="genus-section">
+                    <h4 class="genus-name" onclick="toggleGenus('alnus')">Genus: Alnus ▼</h4>
+                    <ul id="alnus" class="species-list" style="display: none;">
+                        <li><a href="catalog.html#plant-14"><em>Alnus incana</em> - Thinleaf alder</a></li>
+                    </ul>
+                </div>
+                <div class="genus-section">
+                    <h4 class="genus-name" onclick="toggleGenus('betula')">Genus: Betula ▼</h4>
+                    <ul id="betula" class="species-list" style="display: none;">
+                        <li><a href="catalog.html#plant-15"><em>Betula occidentalis</em> - River birch</a></li>
+                        <li><a href="catalog.html#plant-16"><em>Betula papyrifera</em> - Paper birch</a></li>
+                    </ul>
+                </div>
+                <div class="genus-section">
+                    <h4 class="genus-name" onclick="toggleGenus('carpinus')">Genus: Carpinus ▼</h4>
+                    <ul id="carpinus" class="species-list" style="display: none;">
+                        <li><a href="catalog.html#plant-17"><em>Carpinus caroliniana</em> - American hornbeam</a></li>
+                    </ul>
+                </div>
+                <div class="genus-section">
+                    <h4 class="genus-name" onclick="toggleGenus('corylus')">Genus: Corylus ▼</h4>
+                    <ul id="corylus" class="species-list" style="display: none;">
+                        <li><a href="catalog.html#plant-18"><em>Corylus americana</em> - Hazelnut</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- Family: Bignoniaceae -->
+        <div class="family-section">
+            <h3 class="family-name" onclick="toggleFamily('bignoniaceae')">Bignoniaceae ▼</h3>
+            <div id="bignoniaceae" class="family-content" style="display: none;">
+                <div class="genus-section">
+                    <h4 class="genus-name" onclick="toggleGenus('campsis')">Genus: Campsis ▼</h4>
+                    <ul id="campsis" class="species-list" style="display: none;">
+                        <li><a href="catalog.html#plant-19"><em>Campsis radicans</em> - Trumpet creeper</a></li>
+                    </ul>
+                </div>
+                <div class="genus-section">
+                    <h4 class="genus-name" onclick="toggleGenus('chilopsis')">Genus: Chilopsis ▼</h4>
+                    <ul id="chilopsis" class="species-list" style="display: none;">
+                        <li><a href="catalog.html#plant-20"><em>Chilopsis linearis</em> - Desert willow</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- Family: Buxaceae -->
+        <div class="family-section">
+            <h3 class="family-name" onclick="toggleFamily('buxaceae')">Buxaceae ▼</h3>
+            <div id="buxaceae" class="family-content" style="display: none;">
+                <div class="genus-section">
+                    <h4 class="genus-name" onclick="toggleGenus('buxus')">Genus: Buxus ▼</h4>
+                    <ul id="buxus" class="species-list" style="display: none;">
+                        <li><a href="catalog.html#plant-21"><em>Buxus sempervirens</em> - Boxwood</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- Family: Cactaceae -->
+        <div class="family-section">
+            <h3 class="family-name" onclick="toggleFamily('cactaceae')">Cactaceae ▼</h3>
+            <div id="cactaceae" class="family-content" style="display: none;">
+                <div class="genus-section">
+                    <h4 class="genus-name" onclick="toggleGenus('opuntia')">Genus: Opuntia ▼</h4>
+                    <ul id="opuntia" class="species-list" style="display: none;">
+                        <li><a href="catalog.html#plant-22"><em>Opuntia spp.</em> - Prickly pear</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- Family: Cannabaceae -->
+        <div class="family-section">
+            <h3 class="family-name" onclick="toggleFamily('cannabaceae')">Cannabaceae ▼</h3>
+            <div id="cannabaceae" class="family-content" style="display: none;">
+                <div class="genus-section">
+                    <h4 class="genus-name" onclick="toggleGenus('humulus')">Genus: Humulus ▼</h4>
+                    <ul id="humulus" class="species-list" style="display: none;">
+                        <li><a href="catalog.html#plant-23"><em>Humulus lupulus</em> - Common hop</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- Family: Caprifoliaceae -->
+        <div class="family-section">
+            <h3 class="family-name" onclick="toggleFamily('caprifoliaceae')">Caprifoliaceae ▼</h3>
+            <div id="caprifoliaceae" class="family-content" style="display: none;">
+                <div class="genus-section">
+                    <h4 class="genus-name" onclick="toggleGenus('diervilla')">Genus: Diervilla ▼</h4>
+                    <ul id="diervilla" class="species-list" style="display: none;">
+                        <li><a href="catalog.html#plant-24"><em>Diervilla sessilifolia</em> - Southern bush honeysuckle</a></li>
+                    </ul>
+                </div>
+                <div class="genus-section">
+                    <h4 class="genus-name" onclick="toggleGenus('kolkwitzia')">Genus: Kolkwitzia ▼</h4>
+                    <ul id="kolkwitzia" class="species-list" style="display: none;">
+                        <li><a href="catalog.html#plant-25"><em>Kolkwitzia amabilis</em> - Beautybush</a></li>
+                    </ul>
+                </div>
+                <div class="genus-section">
+                    <h4 class="genus-name" onclick="toggleGenus('symphoricarpos')">Genus: Symphoricarpos ▼</h4>
+                    <ul id="symphoricarpos" class="species-list" style="display: none;">
+                        <li><a href="catalog.html#plant-26"><em>Symphoricarpos albus</em> - Common snowberry</a></li>
+                    </ul>
+                </div>
+                <div class="genus-section">
+                    <h4 class="genus-name" onclick="toggleGenus('weigela')">Genus: Weigela ▼</h4>
+                    <ul id="weigela" class="species-list" style="display: none;">
+                        <li><a href="catalog.html#plant-27"><em>Weigela florida</em> - Weigela</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- Family: Celastraceae -->
+        <div class="family-section">
+            <h3 class="family-name" onclick="toggleFamily('celastraceae')">Celastraceae ▼</h3>
+            <div id="celastraceae" class="family-content" style="display: none;">
+                <div class="genus-section">
+                    <h4 class="genus-name" onclick="toggleGenus('euonymus')">Genus: Euonymus ▼</h4>
+                    <ul id="euonymus" class="species-list" style="display: none;">
+                        <li><a href="catalog.html#plant-28"><em>Euonymus japonicus</em> - Japanese euonymus</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- Family: Cercidiphyllaceae -->
+        <div class="family-section">
+            <h3 class="family-name" onclick="toggleFamily('cercidiphyllaceae')">Cercidiphyllaceae ▼</h3>
+            <div id="cercidiphyllaceae" class="family-content" style="display: none;">
+                <div class="genus-section">
+                    <h4 class="genus-name" onclick="toggleGenus('cercidiphyllum')">Genus: Cercidiphyllum ▼</h4>
+                    <ul id="cercidiphyllum" class="species-list" style="display: none;">
+                        <li><a href="catalog.html#plant-29"><em>Cercidiphyllum japonicum</em> - Katsura tree</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- Family: Cornaceae -->
+        <div class="family-section">
+            <h3 class="family-name" onclick="toggleFamily('cornaceae')">Cornaceae ▼</h3>
+            <div id="cornaceae" class="family-content" style="display: none;">
+                <div class="genus-section">
+                    <h4 class="genus-name" onclick="toggleGenus('cornus')">Genus: Cornus ▼</h4>
+                    <ul id="cornus" class="species-list" style="display: none;">
+                        <li><a href="catalog.html#plant-30"><em>Cornus florida</em> - Flowering dogwood</a></li>
+                        <li><a href="catalog.html#plant-31"><em>Cornus sericea</em> - Redosier dogwood</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- Family: Cupressaceae -->
+        <div class="family-section">
+            <h3 class="family-name" onclick="toggleFamily('cupressaceae')">Cupressaceae ▼</h3>
+            <div id="cupressaceae" class="family-content" style="display: none;">
+                <div class="genus-section">
+                    <h4 class="genus-name" onclick="toggleGenus('calocedrus')">Genus: Calocedrus ▼</h4>
+                    <ul id="calocedrus" class="species-list" style="display: none;">
+                        <li><a href="catalog.html#plant-32"><em>Calocedrus decurrens</em> - Incense cedar</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- Family: Ephedraceae -->
+        <div class="family-section">
+            <h3 class="family-name" onclick="toggleFamily('ephedraceae')">Ephedraceae ▼</h3>
+            <div id="ephedraceae" class="family-content" style="display: none;">
+                <div class="genus-section">
+                    <h4 class="genus-name" onclick="toggleGenus('ephedra')">Genus: Ephedra ▼</h4>
+                    <ul id="ephedra" class="species-list" style="display: none;">
+                        <li><a href="catalog.html#plant-33"><em>Ephedra viridis</em> - Green ephedra</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- Family: Fabaceae -->
+        <div class="family-section">
+            <h3 class="family-name" onclick="toggleFamily('fabaceae')">Fabaceae ▼</h3>
+            <div id="fabaceae" class="family-content" style="display: none;">
+                <div class="genus-section">
+                    <h4 class="genus-name" onclick="toggleGenus('albizia')">Genus: Albizia ▼</h4>
+                    <ul id="albizia" class="species-list" style="display: none;">
+                        <li><a href="catalog.html#plant-34"><em>Albizia julibrissin</em> - Mimosa</a></li>
+                    </ul>
+                </div>
+                <div class="genus-section">
+                    <h4 class="genus-name" onclick="toggleGenus('caragana')">Genus: Caragana ▼</h4>
+                    <ul id="caragana" class="species-list" style="display: none;">
+                        <li><a href="catalog.html#plant-35"><em>Caragana arborescens</em> - Siberian pea shrub</a></li>
+                    </ul>
+                </div>
+                <div class="genus-section">
+                    <h4 class="genus-name" onclick="toggleGenus('cercis')">Genus: Cercis ▼</h4>
+                    <ul id="cercis" class="species-list" style="display: none;">
+                        <li><a href="catalog.html#plant-36"><em>Cercis canadensis</em> - Redbud</a></li>
+                    </ul>
+                </div>
+                <div class="genus-section">
+                    <h4 class="genus-name" onclick="toggleGenus('gleditsia')">Genus: Gleditsia ▼</h4>
+                    <ul id="gleditsia" class="species-list" style="display: none;">
+                        <li><a href="catalog.html#plant-37"><em>Gleditsia triacanthos</em> - Honey locust</a></li>
+                    </ul>
+                </div>
+                <div class="genus-section">
+                    <h4 class="genus-name" onclick="toggleGenus('gymnocladus')">Genus: Gymnocladus ▼</h4>
+                    <ul id="gymnocladus" class="species-list" style="display: none;">
+                        <li><a href="catalog.html#plant-38"><em>Gymnocladus dioica</em> - Kentucky coffee tree</a></li>
+                    </ul>
+                </div>
+                <div class="genus-section">
+                    <h4 class="genus-name" onclick="toggleGenus('robinia')">Genus: Robinia ▼</h4>
+                    <ul id="robinia" class="species-list" style="display: none;">
+                        <li><a href="catalog.html#plant-39"><em>Robinia pseudoacacia</em> - Black locust</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- Family: Fagaceae -->
+        <div class="family-section">
+            <h3 class="family-name" onclick="toggleFamily('fagaceae')">Fagaceae ▼</h3>
+            <div id="fagaceae" class="family-content" style="display: none;">
+                <div class="genus-section">
+                    <h4 class="genus-name" onclick="toggleGenus('fagus')">Genus: Fagus ▼</h4>
+                    <ul id="fagus" class="species-list" style="display: none;">
+                        <li><a href="catalog.html#plant-40"><em>Fagus grandifolia</em> - American beech</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- Family: Hamamelidaceae -->
+        <div class="family-section">
+            <h3 class="family-name" onclick="toggleFamily('hamamelidaceae')">Hamamelidaceae ▼</h3>
+            <div id="hamamelidaceae" class="family-content" style="display: none;">
+                <div class="genus-section">
+                    <h4 class="genus-name" onclick="toggleGenus('liquidambar')">Genus: Liquidambar ▼</h4>
+                    <ul id="liquidambar" class="species-list" style="display: none;">
+                        <li><a href="catalog.html#plant-41"><em>Liquidambar styraciflua</em> - Sweet gum</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- Family: Hypericaceae -->
+        <div class="family-section">
+            <h3 class="family-name" onclick="toggleFamily('hypericaceae')">Hypericaceae ▼</h3>
+            <div id="hypericaceae" class="family-content" style="display: none;">
+                <div class="genus-section">
+                    <h4 class="genus-name" onclick="toggleGenus('hypericum')">Genus: Hypericum ▼</h4>
+                    <ul id="hypericum" class="species-list" style="display: none;">
+                        <li><a href="catalog.html#plant-42"><em>Hypericum frondosum</em> - Golden St. Johnswort</a></li>
+                        <li><a href="catalog.html#plant-43"><em>Hypericum kalmianum</em> - Kalms St. Johnswort</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- Family: Juglandaceae -->
+        <div class="family-section">
+            <h3 class="family-name" onclick="toggleFamily('juglandaceae')">Juglandaceae ▼</h3>
+            <div id="juglandaceae" class="family-content" style="display: none;">
+                <div class="genus-section">
+                    <h4 class="genus-name" onclick="toggleGenus('juglans')">Genus: Juglans ▼</h4>
+                    <ul id="juglans" class="species-list" style="display: none;">
+                        <li><a href="catalog.html#plant-44"><em>Juglans regia</em> - English walnut</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- Family: Lamiaceae -->
+        <div class="family-section">
+            <h3 class="family-name" onclick="toggleFamily('lamiaceae')">Lamiaceae ▼</h3>
+            <div id="lamiaceae" class="family-content" style="display: none;">
+                <div class="genus-section">
+                    <h4 class="genus-name" onclick="toggleGenus('caryopteris')">Genus: Caryopteris ▼</h4>
+                    <ul id="caryopteris" class="species-list" style="display: none;">
+                        <li><em>Caryopteris × clandonensis</em> - Bluebeard</li>
+                    </ul>
+                </div>
+                <div class="genus-section">
+                    <h4 class="genus-name" onclick="toggleGenus('lavandula')">Genus: Lavandula ▼</h4>
+                    <ul id="lavandula" class="species-list" style="display: none;">
+                        <li><em>Lavandula angustifolia</em> - Lavender</li>
+                    </ul>
+                </div>
+                <div class="genus-section">
+                    <h4 class="genus-name" onclick="toggleGenus('monarda')">Genus: Monarda ▼</h4>
+                    <ul id="monarda" class="species-list" style="display: none;">
+                        <li><a href="catalog.html#plant-50"><em>Monarda fistulosa</em> - Beebalm</a></li>
+                    </ul>
+                </div>
+                <div class="genus-section">
+                    <h4 class="genus-name" onclick="toggleGenus('salvia')">Genus: Salvia ▼</h4>
+                    <ul id="salvia" class="species-list" style="display: none;">
+                        <li><a href="catalog.html#plant-54"><em>Salvia nemorosa</em> - Woodland sage</a></li>
+                        <li><em>Salvia yangii</em> - Russian sage</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- Family: Magnoliaceae -->
+        <div class="family-section">
+            <h3 class="family-name" onclick="toggleFamily('magnoliaceae')">Magnoliaceae ▼</h3>
+            <div id="magnoliaceae" class="family-content" style="display: none;">
+                <div class="genus-section">
+                    <h4 class="genus-name" onclick="toggleGenus('magnolia')">Genus: Magnolia ▼</h4>
+                    <ul id="magnolia" class="species-list" style="display: none;">
+                        <li><em>Magnolia spp.</em> - Magnolia</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- Family: Malvaceae -->
+        <div class="family-section">
+            <h3 class="family-name" onclick="toggleFamily('malvaceae')">Malvaceae ▼</h3>
+            <div id="malvaceae" class="family-content" style="display: none;">
+                <div class="genus-section">
+                    <h4 class="genus-name" onclick="toggleGenus('hibiscus')">Genus: Hibiscus ▼</h4>
+                    <ul id="hibiscus" class="species-list" style="display: none;">
+                        <li><em>Hibiscus syriacus</em> - Rose of Sharon</li>
+                    </ul>
+                </div>
+                <div class="genus-section">
+                    <h4 class="genus-name" onclick="toggleGenus('tilia')">Genus: Tilia ▼</h4>
+                    <ul id="tilia" class="species-list" style="display: none;">
+                        <li><em>Tilia tomentosa</em> - Silver linden</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- Family: Oleaceae -->
+        <div class="family-section">
+            <h3 class="family-name" onclick="toggleFamily('oleaceae')">Oleaceae ▼</h3>
+            <div id="oleaceae" class="family-content" style="display: none;">
+                <div class="genus-section">
+                    <h4 class="genus-name" onclick="toggleGenus('forsythia')">Genus: Forsythia ▼</h4>
+                    <ul id="forsythia" class="species-list" style="display: none;">
+                        <li><em>Forsythia suspensa</em> - Forsythia</li>
+                    </ul>
+                </div>
+                <div class="genus-section">
+                    <h4 class="genus-name" onclick="toggleGenus('fraxinus')">Genus: Fraxinus ▼</h4>
+                    <ul id="fraxinus" class="species-list" style="display: none;">
+                        <li><em>Fraxinus pennsylvanica</em> - Green ash</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- Family: Onagraceae -->
+        <div class="family-section">
+            <h3 class="family-name" onclick="toggleFamily('onagraceae')">Onagraceae ▼</h3>
+            <div id="onagraceae" class="family-content" style="display: none;">
+                <div class="genus-section">
+                    <h4 class="genus-name" onclick="toggleGenus('gaura')">Genus: Gaura ▼</h4>
+                    <ul id="gaura" class="species-list" style="display: none;">
+                        <li><em>Gaura lindheimeri</em> - Guara</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- Family: Pinaceae -->
+        <div class="family-section">
+            <h3 class="family-name" onclick="toggleFamily('pinaceae')">Pinaceae ▼</h3>
+            <div id="pinaceae" class="family-content" style="display: none;">
+                <div class="genus-section">
+                    <h4 class="genus-name" onclick="toggleGenus('abies')">Genus: Abies ▼</h4>
+                    <ul id="abies" class="species-list" style="display: none;">
+                        <li><em>Abies concolor</em> - Colorado fir</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- Family: Platanaceae -->
+        <div class="family-section">
+            <h3 class="family-name" onclick="toggleFamily('platanaceae')">Platanaceae ▼</h3>
+            <div id="platanaceae" class="family-content" style="display: none;">
+                <div class="genus-section">
+                    <h4 class="genus-name" onclick="toggleGenus('platanus')">Genus: Platanus ▼</h4>
+                    <ul id="platanus" class="species-list" style="display: none;">
+                        <li><em>Platanus × acerifolia</em> - London plane tree</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- Family: Poaceae -->
+        <div class="family-section">
+            <h3 class="family-name" onclick="toggleFamily('poaceae')">Poaceae ▼</h3>
+            <div id="poaceae" class="family-content" style="display: none;">
+                <div class="genus-section">
+                    <h4 class="genus-name" onclick="toggleGenus('festuca')">Genus: Festuca ▼</h4>
+                    <ul id="festuca" class="species-list" style="display: none;">
+                        <li><em>Festuca glauca</em> - Blue fescue</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- Family: Ranunculaceae -->
+        <div class="family-section">
+            <h3 class="family-name" onclick="toggleFamily('ranunculaceae')">Ranunculaceae ▼</h3>
+            <div id="ranunculaceae" class="family-content" style="display: none;">
+                <div class="genus-section">
+                    <h4 class="genus-name" onclick="toggleGenus('clematis')">Genus: Clematis ▼</h4>
+                    <ul id="clematis" class="species-list" style="display: none;">
+                        <li><em>Clematis ligusticifolia</em> - Old mans beard</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- Family: Rosaceae -->
+        <div class="family-section">
+            <h3 class="family-name" onclick="toggleFamily('rosaceae')">Rosaceae ▼</h3>
+            <div id="rosaceae" class="family-content" style="display: none;">
+                <div class="genus-section">
+                    <h4 class="genus-name" onclick="toggleGenus('cercocarpus')">Genus: Cercocarpus ▼</h4>
+                    <ul id="cercocarpus" class="species-list" style="display: none;">
+                        <li><em>Cercocarpus ledifolius</em> - Mountain mahogany</li>
+                    </ul>
+                </div>
+                <div class="genus-section">
+                    <h4 class="genus-name" onclick="toggleGenus('chaenomeles')">Genus: Chaenomeles ▼</h4>
+                    <ul id="chaenomeles" class="species-list" style="display: none;">
+                        <li><em>Chaenomeles japonica</em> - Quince</li>
+                    </ul>
+                </div>
+                <div class="genus-section">
+                    <h4 class="genus-name" onclick="toggleGenus('cotoneaster')">Genus: Cotoneaster ▼</h4>
+                    <ul id="cotoneaster" class="species-list" style="display: none;">
+                        <li><em>Cotoneaster salicifolius repandens</em> - Willowleaf cotoneaster</li>
+                    </ul>
+                </div>
+                <div class="genus-section">
+                    <h4 class="genus-name" onclick="toggleGenus('crataegus')">Genus: Crataegus ▼</h4>
+                    <ul id="crataegus" class="species-list" style="display: none;">
+                        <li><em>Crataegus sp.</em> - Hawthorn</li>
+                    </ul>
+                </div>
+                <div class="genus-section">
+                    <h4 class="genus-name" onclick="toggleGenus('dasiphora')">Genus: Dasiphora ▼</h4>
+                    <ul id="dasiphora" class="species-list" style="display: none;">
+                        <li><em>Dasiphora fruticosa</em> - Shrubby cinquefoil</li>
+                    </ul>
+                </div>
+                <div class="genus-section">
+                    <h4 class="genus-name" onclick="toggleGenus('fallugia')">Genus: Fallugia ▼</h4>
+                    <ul id="fallugia" class="species-list" style="display: none;">
+                        <li><em>Fallugia paradoxa</em> - Apache plume</li>
+                    </ul>
+                </div>
+                <div class="genus-section">
+                    <h4 class="genus-name" onclick="toggleGenus('fragaria')">Genus: Fragaria ▼</h4>
+                    <ul id="fragaria" class="species-list" style="display: none;">
+                        <li><em>Fragaria × ananassa</em> - Common strawberry</li>
+                    </ul>
+                </div>
+                <div class="genus-section">
+                    <h4 class="genus-name" onclick="toggleGenus('malus')">Genus: Malus ▼</h4>
+                    <ul id="malus" class="species-list" style="display: none;">
+                        <li><em>Malus × domestica</em> - Apple</li>
+                    </ul>
+                </div>
+                <div class="genus-section">
+                    <h4 class="genus-name" onclick="toggleGenus('physocarpus')">Genus: Physocarpus ▼</h4>
+                    <ul id="physocarpus" class="species-list" style="display: none;">
+                        <li><em>Physocarpus malvaceus</em> - Ninebark</li>
+                        <li><em>Physocarpus opulifolius</em> - Purple ninebark</li>
+                    </ul>
+                </div>
+                <div class="genus-section">
+                    <h4 class="genus-name" onclick="toggleGenus('prunus')">Genus: Prunus ▼</h4>
+                    <ul id="prunus" class="species-list" style="display: none;">
+                        <li><em>Prunus americana</em> - Potawami plum</li>
+                        <li><a href="catalog.html#plant-68"><em>Prunus armeniaca</em> - Apricot</a></li>
+                        <li><em>Prunus domestica</em> - Plum</li>
+                        <li><em>Prunus laurocerasus</em> - Cherry laurel</li>
+                        <li><a href="catalog.html#plant-72"><em>Prunus persica</em> - Peach</a></li>
+                        <li><a href="catalog.html#plant-73"><em>Prunus serrulata</em> - Flowering cherry</a></li>
+                        <li><a href="catalog.html#plant-74"><em>Prunus virginiana</em> - Chokecherry</a></li>
+                    </ul>
+                </div>
+                <div class="genus-section">
+                    <h4 class="genus-name" onclick="toggleGenus('pyracantha')">Genus: Pyracantha ▼</h4>
+                    <ul id="pyracantha" class="species-list" style="display: none;">
+                        <li><a href="catalog.html#plant-77"><em>Pyracantha coccinea</em> - Scarlet firethorn</a></li>
+                    </ul>
+                </div>
+                <div class="genus-section">
+                    <h4 class="genus-name" onclick="toggleGenus('pyrus')">Genus: Pyrus ▼</h4>
+                    <ul id="pyrus" class="species-list" style="display: none;">
+                        <li><em>Pyrus calleryana</em> - Bradford pear</li>
+                        <li><em>Pyrus communis</em> - Pear</li>
+                        <li><em>Pyrus pyrifolia</em> - Asian pear</li>
+                    </ul>
+                </div>
+                <div class="genus-section">
+                    <h4 class="genus-name" onclick="toggleGenus('spiraea')">Genus: Spiraea ▼</h4>
+                    <ul id="spiraea" class="species-list" style="display: none;">
+                        <li><em>Spiraea × bumalda</em> - Bumald spirea</li>
+                        <li><em>Spiraea nipponica</em> - Snowmound</li>
+                        <li><em>Spiraea × vanhouttei</em> - Bridal wealth</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- Family: Salicaceae -->
+        <div class="family-section">
+            <h3 class="family-name" onclick="toggleFamily('salicaceae')">Salicaceae ▼</h3>
+            <div id="salicaceae" class="family-content" style="display: none;">
+                <div class="genus-section">
+                    <h4 class="genus-name" onclick="toggleGenus('populus')">Genus: Populus ▼</h4>
+                    <ul id="populus" class="species-list" style="display: none;">
+                        <li><em>Populus angustifolia</em> - Narrowleaf poplar</li>
+                        <li><em>Populus fremontii</em> - Cottonwood</li>
+                        <li><a href="catalog.html#plant-87"><em>Populus tremuloides</em> - Quaking aspen</a></li>
+                    </ul>
+                </div>
+                <div class="genus-section">
+                    <h4 class="genus-name" onclick="toggleGenus('salix')">Genus: Salix ▼</h4>
+                    <ul id="salix" class="species-list" style="display: none;">
+                        <li><em>Salix exigua</em> - Sandbar willow</li>
+                        <li><em>Salix matsudana var. tortuosa</em> - Corkscrew willow</li>
+                        <li><em>Salix purpurea</em> - Arctic willow</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- Family: Simaroubaceae -->
+        <div class="family-section">
+            <h3 class="family-name" onclick="toggleFamily('simaroubaceae')">Simaroubaceae ▼</h3>
+            <div id="simaroubaceae" class="family-content" style="display: none;">
+                <div class="genus-section">
+                    <h4 class="genus-name" onclick="toggleGenus('ailanthus')">Genus: Ailanthus ▼</h4>
+                    <ul id="ailanthus" class="species-list" style="display: none;">
+                        <li><a href="catalog.html#plant-89"><em>Ailanthus altissima</em> - Tree of heaven</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <!-- Footer -->
+    <div class="footer">
+        <p>&copy; 2025 Field Botany Guide</p>
+    </div>
+
+    <!-- JavaScript for toggling family and genus sections -->
+    <script>
+        function toggleFamily(familyId) {
+            var content = document.getElementById(familyId);
+            if (content.style.display === "none") {
+                content.style.display = "block";
+            } else {
+                content.style.display = "none";
+            }
+        }
+
+        function toggleGenus(genusId) {
+            var content = document.getElementById(genusId);
+            if (content.style.display === "none") {
+                content.style.display = "block";
+            } else {
+                content.style.display = "none";
+            }
+        }
+    </script>
+</body>
+</html>
+
+
+

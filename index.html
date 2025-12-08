@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Field Botany Guide - Home</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <nav>
+        <a href="index.html" class="active">Home</a>
+        <a href="index.html#naming">Naming Convention</a>
+        <a href="families.html">Browse by Family</a>
+        <a href="catalog.html">Plant Catalog</a>
+        <a href="game.html">Plant ID Game</a>
+        <a href="Resume/index_Version2.html">Resume</a>
+    </nav>
+
+    <!-- Div 1: Header Section -->
+    <div class="header-section">
+        <h1>Introduction to Field Botany</h1>
+        <p>Discover the fascinating world of plant taxonomy and identification</p>
+    </div>
+
+    <!-- Div 2: Main Content Section -->
+    <div class="main-content">
+        <h2>Welcome to Field Botany</h2>
+        <p>Field botany is the study and identification of plants in their natural habitats. Understanding plant taxonomy is essential for botanists, ecologists, and nature enthusiasts alike.</p>
+
+        <!-- Nested Lists: Understanding Plant Classification -->
+        <h3>Why Study Field Botany?</h3>
+        <ol>
+            <li>Biodiversity Conservation
+                <ul>
+                    <li>Monitor ecosystem health</li>
+                    <li>Better understand the natural world</li>
+                    <li>Enjoy what nature has to offer</li>
+                </ul>
+            </li>
+            <li>Scientific Research
+                <ul>
+                    <li>Ecological studies</li>
+                    <li>Climate change impacts</li>
+                    <li>Plant genetics</li>
+                </ul>
+            </li>
+            <li>Practical Applications
+                <ul>
+                    <li>Agriculture and horticulture</li>
+                    <li>Medicinal plant discovery</li>
+                    <li>Native landscape design</li>
+                </ul>
+            </li>
+        </ol>
+
+        <!-- Image-->
+        <h3>Field Botany in Action</h3>
+        <img src="jpg/field_botanist.jpg" alt="BYU student identifying and collecting native grass seeds for research" width="500">
+        <p>BYU student collects native grass seeds for research on how greater native biodiversity helps with wildfire prevention</p>
+
+        <!-- YouTube Video Embed -->
+        <h3>Introduction to Plant Identification</h3>
+        <iframe width="560" height="315" 
+                src="https://www.youtube.com/embed/dQw4w9WgXcQ" 
+                title="YouTube video player" 
+                frameborder="0" 
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                allowfullscreen>
+        </iframe>
+    </div>
+
+    <!-- Div 3: Naming Convention Section with on-page anchor target -->
+    <div class="visualization-section" id="naming">
+        <h2>Plant Naming Convention</h2>
+        <p>Understanding botanical nomenclature is fundamental to field botany. Plants follow a hierarchical classification system:</p>
+        
+        <div class="naming-hierarchy">
+            <h3>Taxonomic Hierarchy</h3>
+            <div class="taxonomy-box">
+                <p><strong>Family</strong> - A group of related genera (plural of genus)</p>
+                <p class="example">Example: Adoxaceae</p>
+            </div>
+            
+            <div class="taxonomy-box">
+                <p><strong>Genus</strong> - A group of closely related species</p>
+                <p class="example">Example: <em>Sambucus</em></p>
+            </div>
+            
+            <div class="taxonomy-box">
+                <p><strong>Specific Epithet</strong> - The second part of the species name</p>
+                <p class="example">Example: <em>caerulea</em></p>
+            </div>
+            
+            <div class="taxonomy-box">
+                <p><strong>Species</strong> = Genus + Specific Epithet</p>
+                <p class="example">Example: <em>Sambucus caerulea</em> (Blue elderberry)</p>
+            </div>
+        </div>
+
+        <h3>Plant Diversity Data</h3>
+        <p>iNaturalist Viewer</p>
+        
+        <!-- Embedded Tableau Graph -->
+        <div class='tableauPlaceholder' id='viz1765226530529' style='position: relative'><noscript><a href='#'><img alt='Inaturalist Viewer ' src='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;JY&#47;JY5MT22YB&#47;1_rss.png' style='border: none' /></a></noscript><object class='tableauViz'  style='display:none;'><param name='host_url' value='https%3A%2F%2Fpublic.tableau.com%2F' /> <param name='embed_code_version' value='3' /> <param name='path' value='shared&#47;JY5MT22YB' /> <param name='toolbar' value='yes' /><param name='static_image' value='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;JY&#47;JY5MT22YB&#47;1.png' /> <param name='animate_transition' value='yes' /><param name='display_static_image' value='yes' /><param name='display_spinner' value='yes' /><param name='display_overlay' value='yes' /><param name='display_count' value='yes' /><param name='language' value='en-US' /></object></div>
+        <script type='text/javascript'>
+            var divElement = document.getElementById('viz1765226530529');
+            var vizElement = divElement.getElementsByTagName('object')[0];
+            vizElement.style.width='100%';
+            vizElement.style.height='927px';
+            var scriptElement = document.createElement('script');
+            scriptElement.src = 'https://public.tableau.com/javascripts/api/viz_v1.js';
+            vizElement.parentNode.insertBefore(scriptElement, vizElement);
+        </script>
+    </div>
+
+    <!-- Footer -->
+    <div class="footer">
+        <p>&copy; 2025 Field Botany Guide | Your gateway to plant identification</p>
+    </div>
+</body>
+</html>

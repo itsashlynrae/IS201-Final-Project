@@ -1,0 +1,620 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Complete Plant Catalog - Field Botany</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="resume.html">Resume</a>
+        <a href="index.html#naming">Naming Convention</a>
+        <a href="families.html">Browse by Family</a>
+        <a href="catalog.html" class="active">Plant Catalog</a>
+        <a href="game.html">Plant ID Game</a>
+    </nav>
+
+    <!-- Header Section -->
+    <div class="header-section">
+        <h1>Complete Plant Catalog</h1>
+        <p>Browse all plants in our collection</p>
+    </div>
+
+    <!-- Main Content -->
+    <div class="main-content">
+        <h2>All Plants A-Z</h2>
+        <p>Below is a complete listing of all plants in our field botany catalog.</p>
+
+        <!-- Search Box -->
+        <input type="text" id="searchBox" placeholder="Search by common name, scientific name, or family..." onkeyup="filterPlants()">
+
+        <div class="plant-grid">
+            <div class="plant-card" data-common="Blue elderberry" data-scientific="Sambucus caerulea" data-family="Adoxaceae">
+                <img src="jpg/1blue_elderberry.jpg" id="plant-1" alt="Sambucus caerulea - Blue elderberry - Adoxaceae">
+                <h3 class="plant-name"><i>Sambucus caerulea</i></h3>
+                <p class="plant-common">Blue elderberry</p>
+                <p class="family">Adoxaceae</p>
+            </div>
+
+            <div class="plant-card" data-common="Black elderberry" data-scientific="Sambucus nigra" data-family="Adoxaceae">
+                <img src="jpg/2black_elderberry.jpg" id="plant-2" alt="Sambucus nigra - Black elderberry - Adoxaceae">
+                <h3 class="plant-name"><i>Sambucus nigra</i></h3>
+                <p class="plant-common">Black elderberry</p>
+                <p class="family">Adoxaceae</p>
+            </div>
+
+            <div class="plant-card" data-common="Burkwood viburnum" data-scientific="Viburnum × burkwoodii" data-family="Adoxaceae">
+                <img src="jpg/3burkwood_viburnum.jpg" id="plant-3" alt="Burkwood viburnum">
+                <h3 class="plant-name"><i>Viburnum × burkwoodii</i></h3>
+                <p class="plant-common">Burkwood viburnum</p>
+                <p class="family">Adoxaceae</p>
+            </div>
+
+            <div class="plant-card" data-common="Black elderberry" data-scientific="Sambucus nigra" data-family="Adoxaceae">
+                <img src="jpg/2black_elderberry.jpg" id="plant-2" alt="Sambucus nigra - Black elderberry - Adoxaceae">
+                <h3 class="plant-name"><i>Sambucus nigra</i></h3>
+                <p class="plant-common">Black elderberry</p>
+                <p class="family">Adoxaceae</p>
+            </div>
+
+            <div class="plant-card" data-common="" data-scientific="" data-family="">
+                <img src="jpg/3burkwood_viburnum.jpg" id="plant-3" alt="Burkwood viburnum">
+                <h3 class="plant-name"><i>Viburnum × burkwoodii</i></h3>
+                <p class="plant-common">Burkwood viburnum</p><p class="family">Adoxaceae</p>
+            </div>
+
+            <div class="plant-card" data-common="Leatherleaf viburnum" data-scientific="Viburnum rhytidophyllum" data-family="Adoxaceae">
+                <img src="jpg/4leatherleaf_viburnum.jpg" id="plant-4" alt="Leatherleaf viburnum">
+                <h3 class="plant-name"><i>Viburnum rhytidophyllum</i></h3>
+                <p class="plant-common">Leatherleaf viburnum</p><p class="family">Adoxaceae</p>
+            </div>
+
+            <div class="plant-card" data-common="Cranberry bush" data-scientific="Viburnum opulus" data-family="Adoxaceae">
+                <img src="jpg/5cranberry_bush.jpg" id="plant-5" alt="Cranberry bush">
+                <h3 class="plant-name"><i>Viburnum opulus</i></h3>
+                <p class="plant-common">Cranberry bush</p><p class="family">Adoxaceae</p>
+            </div>
+
+            <div class="plant-card" data-common="Saltbush" data-scientific="Atriplex canescens" data-family="Amaranthaceae">
+                <img src="jpg/6saltbush.jpg" id="plant-6" alt="Saltbush">
+                <h3 class="plant-name"><i>Atriplex canescens</i></h3>
+                <p class="plant-common">Saltbush</p><p class="family">Amaranthaceae</p>
+            </div>
+
+            <div class="plant-card" data-common="Smokebush" data-scientific="Cotinus coggygria" data-family="Anacardiaceae">
+                <img src="jpg/7smokebush.jpg" id="plant-7" alt="Smokebush">
+                <h3 class="plant-name"><i>Cotinus coggygria</i></h3>
+                <p class="plant-common">Smokebush</p><p class="family">Anacardiaceae</p>
+            </div>
+
+            <div class="plant-card" data-common="English ivy" data-scientific="Hedera helix" data-family="Araliaceae">
+                <img src="jpg/8english_ivy.jpg" id="plant-8" alt="English ivy">
+                <h3 class="plant-name"><i>Hedera helix</i></h3>
+                <p class="plant-common">English ivy</p><p class="family">Araliaceae</p>
+            </div>
+
+            <div class="plant-card" data-common="Lily turf" data-scientific="Liriope muscari" data-family="Asparagaceae">
+                <img src="jpg/9lily_turf.jpg" id="plant-9" alt="Lily turf">
+                <h3 class="plant-name"><i>Liriope muscari</i></h3>
+                <p class="plant-common">Lily turf</p><p class="family">Asparagaceae</p>
+            </div>
+
+            <div class="plant-card" data-common="Joshua tree" data-scientific="Yucca brevifolia" data-family="Asparagaceae">
+                <img src="jpg/10joshua_tree.jpg" id="plant-10" alt="Joshua tree">
+                <h3 class="plant-name"><i>Yucca brevifolia</i></h3>
+                <p class="plant-common">Joshua tree</p><p class="family">Asparagaceae</p>
+            </div>
+
+            <div class="plant-card" data-common="Goldenrod" data-scientific="Solidago canadensis" data-family="Asteraceae">
+                <img src="jpg/11goldenrod.jpg" id="plant-11" alt="Goldenrod">
+                <h3 class="plant-name"><i>Solidago canadensis</i></h3>
+                <p class="plant-common">Goldenrod</p><p class="family">Asteraceae</p>
+            </div>
+
+            <div class="plant-card" data-common="Oregon grape" data-scientific="Berberis repens" data-family="Berberidaceae">
+                <img src="jpg/12oregon_grape.jpg" id="plant-12" alt="Oregon grape">
+                <h3 class="plant-name"><i>Berberis repens</i></h3>
+                <p class="plant-common">Oregon grape</p><p class="family">Berberidaceae</p>
+            </div>
+
+            <div class="plant-card" data-common="Heavenly bamboo" data-scientific="Nandina domestica" data-family="Berberidaceae">
+                <img src="jpg/13heavenly_bamboo.jpg" id="plant-13" alt="Heavenly bamboo">
+                <h3 class="plant-name"><i>Nandina domestica</i></h3>
+                <p class="plant-common">Heavenly bamboo</p><p class="family">Berberidaceae</p>
+            </div>
+
+            <div class="plant-card" data-common="Thinleaf alder" data-scientific="Alnus incana" data-family="Betulaceae">
+                <img src="jpg/14thinleaf_alder.jpg" id="plant-14" alt="Thinleaf alder">
+                <h3 class="plant-name"><i>Alnus incana</i></h3>
+                <p class="plant-common">Thinleaf alder</p><p class="family">Betulaceae</p>
+            </div>
+
+            <div class="plant-card" data-common="River birch" data-scientific="Betula occidentalis" data-family="Betulaceae">
+                <img src="jpg/15river_birch.jpg" id="plant-15" alt="River birch">
+                <h3 class="plant-name"><i>Betula occidentalis</i></h3>
+                <p class="plant-common">River birch</p><p class="family">Betulaceae</p>
+            </div>
+
+            <div class="plant-card" data-common="Paper birch" data-scientific="Betula papyrifera" data-family="Betulaceae">
+                <img src="jpg/16paper_birch.jpg" id="plant-16" alt="Paper birch">
+                <h3 class="plant-name"><i>Betula papyrifera</i></h3>
+                <p class="plant-common">Paper birch</p><p class="family">Betulaceae</p>
+            </div>
+
+            <div class="plant-card" data-common="American hornbeam" data-scientific="Carpinus caroliniana" data-family="Betulaceae">
+                <img src="jpg/17american_hornbeam.jpg" id="plant-17" alt="American hornbeam">
+                <h3 class="plant-name"><i>Carpinus caroliniana</i></h3>
+                <p class="plant-common">American hornbeam</p><p class="family">Betulaceae</p>
+            </div>
+
+            <div class="plant-card" data-common="Hazelnut" data-scientific="Corylus americana" data-family="Betulaceae">
+                <img src="jpg/18hazelnut.jpg" id="plant-18" alt="Hazelnut">
+                <h3 class="plant-name"><i>Corylus americana</i></h3>
+                <p class="plant-common">Hazelnut</p><p class="family">Betulaceae</p>
+            </div>
+
+            <div class="plant-card" data-common="Trumpet creeper" data-scientific="Campsis radicans" data-family="Bignoniaceae">
+                <img src="jpg/19trumpet_creeper.jpg" id="plant-19" alt="Trumpet creeper">
+                <h3 class="plant-name"><i>Campsis radicans</i></h3>
+                <p class="plant-common">Trumpet creeper</p><p class="family">Bignoniaceae</p>
+            </div>
+
+            <div class="plant-card" data-common="Desert willow" data-scientific="Chilopsis linearis" data-family="Bignoniaceae">
+                <img src="jpg/20desert_willow.jpg" id="plant-20" alt="Desert willow">
+                <h3 class="plant-name"><i>Chilopsis linearis</i></h3>
+                <p class="plant-common">Desert willow</p><p class="family">Bignoniaceae</p>
+            </div>
+
+            <div class="plant-card" data-common="Boxwood" data-scientific="Buxus sempervirens" data-family="Buxaceae">
+                <img src="jpg/21boxwood.jpg" id="plant-21" alt="Boxwood">
+                <h3 class="plant-name"><i>Buxus sempervirens</i></h3>
+                <p class="plant-common">Boxwood</p><p class="family">Buxaceae</p>
+            </div>
+
+            <div class="plant-card" data-common="Prickly pear" data-scientific="Opuntia spp." data-family="Cactaceae">
+                <img src="jpg/22prickly_pear.jpg" id="plant-22" alt="Prickly pear">
+                <h3 class="plant-name"><i>Opuntia spp.</i></h3>
+                <p class="plant-common">Prickly pear</p><p class="family">Cactaceae</p>
+            </div>
+
+            <div class="plant-card" data-common="Common hop" data-scientific="Humulus lupulus" data-family="Cannabaceae">
+                <img src="jpg/23common_hop.jpg" id="plant-23" alt="Common hop">
+                <h3 class="plant-name"><i>Humulus lupulus</i></h3>
+                <p class="plant-common">Common hop</p><p class="family">Cannabaceae</p>
+            </div>
+
+            <div class="plant-card" data-common="Southern bush honeysuckle" data-scientific="Diervilla sessilifolia" data-family="Caprifoliaceae">
+                <img src="jpg/24southern_bush_honeysuckle.jpg" id="plant-24" alt="Southern bush honeysuckle">
+                <h3 class="plant-name"><i>Diervilla sessilifolia</i></h3>
+                <p class="plant-common">Southern bush honeysuckle</p><p class="family">Caprifoliaceae</p>
+            </div>
+
+            <div class="plant-card" data-common="Beautybush" data-scientific="Kolkwitzia amabilis" data-family="Caprifoliaceae">
+                <img src="jpg/25beautybush.jpg" id="plant-25" alt="Beautybush">
+                <h3 class="plant-name"><i>Kolkwitzia amabilis</i></h3>
+                <p class="plant-common">Beautybush</p><p class="family">Caprifoliaceae</p>
+            </div>
+
+            <div class="plant-card" data-common="Common snowberry" data-scientific="Symphoricarpos albus" data-family="Caprifoliaceae">
+                <img src="jpg/26common_snowberry.jpg" id="plant-26" alt="Common snowberry">
+                <h3 class="plant-name"><i>Symphoricarpos albus</i></h3>
+                <p class="plant-common">Common snowberry</p><p class="family">Caprifoliaceae</p>
+            </div>
+
+            <div class="plant-card" data-common="Weigela" data-scientific="Weigela florida" data-family="Caprifoliaceae">
+                <img src="jpg/27weigela.jpg" id="plant-27" alt="Weigela">
+                <h3 class="plant-name"><i>Weigela florida</i></h3>
+                <p class="plant-common">Weigela</p><p class="family">Caprifoliaceae</p>
+            </div>
+
+            <div class="plant-card" data-common="Japanese euonymus" data-scientific="Euonymus japonicus" data-family="Celastraceae">
+                <img src="jpg/28japanese_euonymus.jpg" id="plant-28" alt="Japanese euonymus">
+                <h3 class="plant-name"><i>Euonymus japonicus</i></h3>
+                <p class="plant-common">Japanese euonymus</p><p class="family">Celastraceae</p>
+            </div>
+
+            <div class="plant-card" data-common="Katsura tree" data-scientific="Cercidiphyllum japonicum" data-family="Cercidiphyllaceae">
+                <img src="jpg/29katsura_tree.jpg" id="plant-29" alt="Katsura tree">
+                <h3 class="plant-name"><i>Cercidiphyllum japonicum</i></h3>
+                <p class="plant-common">Katsura tree</p><p class="family">Cercidiphyllaceae</p>
+            </div>
+
+            <div class="plant-card" data-common="Flowering dogwood" data-scientific="Cornus florida" data-family="Cornaceae">
+                <img src="jpg/30flowering_dogwood.jpg" id="plant-30" alt="Flowering dogwood">
+                <h3 class="plant-name"><i>Cornus florida</i></h3>
+                <p class="plant-common">Flowering dogwood</p><p class="family">Cornaceae</p>
+            </div>
+
+            <div class="plant-card" data-common="Redosier dogwood" data-scientific="Cornus sericea" data-family="Cornaceae">
+                <img src="jpg/31redosier_dogwood.jpg" id="plant-31" alt="Redosier dogwood">
+                <h3 class="plant-name"><i>Cornus sericea</i></h3>
+                <p class="plant-common">Redosier dogwood</p><p class="family">Cornaceae</p>
+            </div>
+
+            <div class="plant-card" data-common="Incense cedar" data-scientific="Calocedrus decurrens" data-family="Cupressaceae">
+                <img src="jpg/32incense_cedar.jpg" id="plant-32" alt="Incense cedar">
+                <h3 class="plant-name"><i>Calocedrus decurrens</i></h3>
+                <p class="plant-common">Incense cedar</p><p class="family">Cupressaceae</p>
+            </div>
+
+            <div class="plant-card" data-common="Green ephedra" data-scientific="Ephedra viridis" data-family="Ephedraceae">
+                <img src="jpg/33green_ephedra.jpg" id="plant-33" alt="Green ephedra">
+                <h3 class="plant-name"><i>Ephedra viridis</i></h3>
+                <p class="plant-common">Green ephedra</p><p class="family">Ephedraceae</p>
+            </div>
+
+            <div class="plant-card" data-common="Mimosa" data-scientific="Albizia julibrissin" data-family="Fabaceae">
+                <img src="jpg/34mimosa.jpg" id="plant-34" alt="Mimosa">
+                <h3 class="plant-name"><i>Albizia julibrissin</i></h3>
+                <p class="plant-common">Mimosa</p><p class="family">Fabaceae</p>
+            </div>
+
+            <div class="plant-card" data-common="Siberian pea shrub" data-scientific="Caragana arborescens" data-family="Fabaceae">
+                <img src="jpg/35siberian_pea_shrub.jpg" id="plant-35" alt="Siberian pea shrub">
+                <h3 class="plant-name"><i>Caragana arborescens</i></h3>
+                <p class="plant-common">Siberian pea shrub</p><p class="family">Fabaceae</p>
+            </div>
+
+            <div class="plant-card" data-common="Redbud" data-scientific="Cercis canadensis" data-family="Fabaceae">
+                <img src="jpg/36redbud.jpg" id="plant-36" alt="Redbud">
+                <h3 class="plant-name"><i>Cercis canadensis</i></h3>
+                <p class="plant-common">Redbud</p><p class="family">Fabaceae</p>
+            </div>
+
+            <div class="plant-card" data-common="Honey locust" data-scientific="Gleditsia triacanthos" data-family="Fabaceae">
+                <img src="jpg/37honey_locust.jpg" id="plant-37" alt="Honey locust">
+                <h3 class="plant-name"><i>Gleditsia triacanthos</i></h3>
+                <p class="plant-common">Honey locust</p><p class="family">Fabaceae</p>
+            </div>
+
+            <div class="plant-card" data-common="Kentucky coffee tree" data-scientific="Gymnocladus dioica" data-family="Fabaceae">
+                <img src="jpg/38kentucky_coffee_tree.jpg" id="plant-38" alt="Kentucky coffee tree">
+                <h3 class="plant-name"><i>Gymnocladus dioica</i></h3>
+                <p class="plant-common">Kentucky coffee tree</p><p class="family">Fabaceae</p>
+            </div>
+
+            <div class="plant-card" data-common="Black locust" data-scientific="Robinia pseudoacacia" data-family="Fabaceae">
+                <img src="jpg/39black_locust.jpg" id="plant-39" alt="Black locust">
+                <h3 class="plant-name"><i>Robinia pseudoacacia</i></h3>
+                <p class="plant-common">Black locust</p><p class="family">Fabaceae</p>
+            </div>
+
+            <div class="plant-card" data-common="American beech" data-scientific="Fagus grandifolia" data-family="Fagaceae">
+                <img src="jpg/40american_beech.jpg" id="plant-40" alt="American beech">
+                <h3 class="plant-name"><i>Fagus grandifolia</i></h3>
+                <p class="plant-common">American beech</p><p class="family">Fagaceae</p>
+            </div>
+
+            <div class="plant-card" data-common="Sweet gum" data-scientific="Liquidambar styraciflua" data-family="Hamamelidaceae">
+                <img src="jpg/41sweet_gum.jpg" id="plant-41" alt="Sweet gum">
+                <h3 class="plant-name"><i>Liquidambar styraciflua</i></h3>
+                <p class="plant-common">Sweet gum</p><p class="family">Hamamelidaceae</p>
+            </div>
+
+            <div class="plant-card" data-common="Golden St. Johnswort" data-scientific="Hypericum frondosum" data-family="Hypericaceae">
+                <img src="jpg/42golden_st_johnswort.jpg" id="plant-42" alt="Golden St. Johnswort">
+                <h3 class="plant-name"><i>Hypericum frondosum</i></h3>
+                <p class="plant-common">Golden St. Johnswort</p><p class="family">Hypericaceae</p>
+            </div>
+
+            <div class="plant-card" data-common="Kalms St. Johnswort" data-scientific="Hypericum kalmianum" data-family="Hypericaceae">
+                <img src="jpg/43kalms_st_johnswort.jpg" id="plant-43" alt="Kalms St. Johnswort">
+                <h3 class="plant-name"><i>Hypericum kalmianum</i></h3>
+                <p class="plant-common">Kalms St. Johnswort</p><p class="family">Hypericaceae</p>
+            </div>
+
+            <div class="plant-card" data-common="English walnut" data-scientific="Juglans regia" data-family="Juglandaceae">
+                <img src="jpg/44english_walnut.jpg" id="plant-44" alt="English walnut">
+                <h3 class="plant-name"><i>Juglans regia</i></h3>
+                <p class="plant-common">English walnut</p><p class="family">Juglandaceae</p>
+            </div>
+
+            <div class="plant-card" data-common="Bluebeard" data-scientific="Caryopteris × clandonensis" data-family="Lamiaceae">
+                <img src="jpg/45bluebeard.jpg" id="plant-45" alt="Bluebeard">
+                <h3 class="plant-name"><i>Caryopteris × clandonensis</i></h3>
+                <p class="plant-common">Bluebeard</p><p class="family">Lamiaceae</p>
+            </div>
+
+            <div class="plant-card" data-common="Lavender" data-scientific="Lavandula angustifolia" data-family="Lamiaceae">
+                <img src="jpg/46lavender.jpg" id="plant-46" alt="Lavender">
+                <h3 class="plant-name"><i>Lavandula angustifolia</i></h3>
+                <p class="plant-common">Lavender</p><p class="family">Lamiaceae</p>
+            </div>
+
+            <div class="plant-card" data-common="Beebalm" data-scientific="Monarda fistulosa" data-family="Lamiaceae">
+                <img src="jpg/47beebalm.jpg" id="plant-47" alt="Beebalm">
+                <h3 class="plant-name"><i>Monarda fistulosa</i></h3>
+                <p class="plant-common">Beebalm</p><p class="family">Lamiaceae</p>
+            </div>
+
+            <div class="plant-card" data-common="Woodland sage" data-scientific="Salvia nemorosa" data-family="Lamiaceae">
+                <img src="jpg/48woodland_sage.jpg" id="plant-48" alt="Woodland sage">
+                <h3 class="plant-name"><i>Salvia nemorosa</i></h3>
+                <p class="plant-common">Woodland sage</p><p class="family">Lamiaceae</p>
+            </div>
+
+            <div class="plant-card" data-common="Russian sage" data-scientific="Salvia yangii" data-family="Lamiaceae">
+                <img src="jpg/49russian_sage.jpg" id="plant-49" alt="Russian sage">
+                <h3 class="plant-name"><i>Salvia yangii</i></h3>
+                <p class="plant-common">Russian sage</p><p class="family">Lamiaceae</p>
+            </div>
+
+            <div class="plant-card" data-common="Magnolia" data-scientific="Magnolia spp." data-family="Magnoliaceae">
+                <img src="jpg/50magnolia.jpg" id="plant-50" alt="Magnolia">
+                <h3 class="plant-name"><i>Magnolia spp.</i></h3>
+                <p class="plant-common">Magnolia</p><p class="family">Magnoliaceae</p>
+            </div>
+
+            <div class="plant-card" data-common="Rose of Sharon" data-scientific="Hibiscus syriacus" data-family="Malvaceae">
+                <img src="jpg/51rose_of_sharon.jpg" id="plant-51" alt="Rose of Sharon">
+                <h3 class="plant-name"><i>Hibiscus syriacus</i></h3>
+                <p class="plant-common">Rose of Sharon</p><p class="family">Malvaceae</p>
+            </div>
+
+            <div class="plant-card" data-common="Silver linden" data-scientific="Tilia tomentosa" data-family="Malvaceae">
+                <img src="jpg/52silver_linden.jpg" id="plant-52" alt="Silver linden">
+                <h3 class="plant-name"><i>Tilia tomentosa</i></h3>
+                <p class="plant-common">Silver linden</p><p class="family">Malvaceae</p>
+            </div>
+
+            <div class="plant-card" data-common="Forsythia" data-scientific="Forsythia suspensa" data-family="Oleaceae">
+                <img src="jpg/53forsythia.jpg" id="plant-53" alt="Forsythia">
+                <h3 class="plant-name"><i>Forsythia suspensa</i></h3>
+                <p class="plant-common">Forsythia</p><p class="family">Oleaceae</p>
+            </div>
+
+            <div class="plant-card" data-common="Green ash" data-scientific="Fraxinus pennsylvanica" data-family="Oleaceae">
+                <img src="jpg/54green_ash.jpg" id="plant-54" alt="Green ash">
+                <h3 class="plant-name"><i>Fraxinus pennsylvanica</i></h3>
+                <p class="plant-common">Green ash</p><p class="family">Oleaceae</p>
+            </div>
+
+            <div class="plant-card" data-common="Guara" data-scientific="Gaura lindheimeri" data-family="Onagraceae">
+                <img src="jpg/55guara.jpg" id="plant-55" alt="Guara">
+                <h3 class="plant-name"><i>Gaura lindheimeri</i></h3>
+                <p class="plant-common">Guara</p><p class="family">Onagraceae</p>
+            </div>
+
+            <div class="plant-card" data-common="Colorado fir" data-scientific="Abies concolor" data-family="Pinaceae">
+                <img src="jpg/56colorado_fir.jpg" id="plant-56" alt="Colorado fir">
+                <h3 class="plant-name"><i>Abies concolor</i></h3>
+                <p class="plant-common">Colorado fir</p><p class="family">Pinaceae</p>
+            </div>
+
+            <div class="plant-card" data-common="London plane tree" data-scientific="Platanus × acerifolia" data-family="Platanaceae">
+                <img src="jpg/57london_plane_tree.jpg" id="plant-57" alt="London plane tree">
+                <h3 class="plant-name"><i>Platanus × acerifolia</i></h3>
+                <p class="plant-common">London plane tree</p><p class="family">Platanaceae</p>
+            </div>
+
+            <div class="plant-card" data-common="Blue fescue" data-scientific="Festuca glauca" data-family="Poaceae">
+                <img src="jpg/58blue_fescue.jpg" id="plant-58" alt="Blue fescue">
+                <h3 class="plant-name"><i>Festuca glauca</i></h3>
+                <p class="plant-common">Blue fescue</p><p class="family">Poaceae</p>
+            </div>
+
+            <div class="plant-card" data-common="Old mans beard" data-scientific="Clematis ligusticifolia" data-family="Ranunculaceae">
+                <img src="jpg/59old_mans_beard.jpg" id="plant-59" alt="Old mans beard">
+                <h3 class="plant-name"><i>Clematis ligusticifolia</i></h3>
+                <p class="plant-common">Old mans beard</p><p class="family">Ranunculaceae</p>
+            </div>
+
+            <div class="plant-card" data-common="Mountain mahogany" data-scientific="Cercocarpus ledifolius" data-family="Rosaceae">
+                <img src="jpg/60mountain_mahogany.jpg" id="plant-60" alt="Mountain mahogany">
+                <h3 class="plant-name"><i>Cercocarpus ledifolius</i></h3>
+                <p class="plant-common">Mountain mahogany</p><p class="family">Rosaceae</p>
+            </div>
+
+            <div class="plant-card" data-common="Quince" data-scientific="Chaenomeles japonica" data-family="Rosaceae">
+                <img src="jpg/61quince.jpg" id="plant-61" alt="Quince">
+                <h3 class="plant-name"><i>Chaenomeles japonica</i></h3>
+                <p class="plant-common">Quince</p><p class="family">Rosaceae</p>
+            </div>
+
+            <div class="plant-card" data-common="Willowleaf cotoneaster" data-scientific="Cotoneaster salicifolius repandens" data-family="Rosaceae">
+                <img src="jpg/62willowleaf_cotoneaster.jpg" id="plant-62" alt="Willowleaf cotoneaster">
+                <h3 class="plant-name"><i>Cotoneaster salicifolius repandens</i></h3>
+                <p class="plant-common">Willowleaf cotoneaster</p><p class="family">Rosaceae</p>
+            </div>
+
+            <div class="plant-card" data-common="Hawthorn" data-scientific="Crataegus sp." data-family="Rosaceae">
+                <img src="jpg/63hawthorn.jpg" id="plant-63" alt="Hawthorn">
+                <h3 class="plant-name"><i>Crataegus sp.</i></h3>
+                <p class="plant-common">Hawthorn</p><p class="family">Rosaceae</p>
+            </div>
+
+            <div class="plant-card" data-common="Shrubby cinquefoil" data-scientific="Dasiphora fruticosa" data-family="Rosaceae">
+                <img src="jpg/64shrubby_cinquefoil.jpg" id="plant-64" alt="Shrubby cinquefoil">
+                <h3 class="plant-name"><i>Dasiphora fruticosa</i></h3>
+                <p class="plant-common">Shrubby cinquefoil</p><p class="family">Rosaceae</p>
+            </div>
+
+            <div class="plant-card" data-common="Apache plume" data-scientific="Fallugia paradoxa" data-family="Rosaceae">
+                <img src="jpg/65apache_plume.jpg" id="plant-65" alt="Apache plume">
+                <h3 class="plant-name"><i>Fallugia paradoxa</i></h3>
+                <p class="plant-common">Apache plume</p><p class="family">Rosaceae</p>
+            </div>
+
+            <div class="plant-card" data-common="Common strawberry" data-scientific="Fragaria × ananassa" data-family="Rosaceae">
+                <img src="jpg/66common_strawberry.jpg" id="plant-66" alt="Common strawberry">
+                <h3 class="plant-name"><i>Fragaria × ananassa</i></h3>
+                <p class="plant-common">Common strawberry</p><p class="family">Rosaceae</p>
+            </div>
+
+            <div class="plant-card" data-common="Apple" data-scientific="Malus × domestica" data-family="Rosaceae">
+                <img src="jpg/67apple.jpg" id="plant-67" alt="Apple">
+                <h3 class="plant-name"><i>Malus × domestica</i></h3>
+                <p class="plant-common">Apple</p><p class="family">Rosaceae</p>
+            </div>
+
+            <div class="plant-card" data-common="Ninebark" data-scientific="Physocarpus malvaceus" data-family="Rosaceae">
+                <img src="jpg/68ninebark.jpg" id="plant-68" alt="Ninebark">
+                <h3 class="plant-name"><i>Physocarpus malvaceus</i></h3>
+                <p class="plant-common">Ninebark</p><p class="family">Rosaceae</p>
+            </div>
+
+            <div class="plant-card" data-common="Purple ninebark" data-scientific="Physocarpus opulifolius" data-family="Rosaceae">
+                <img src="jpg/69purple_ninebark.jpg" id="plant-69" alt="Purple ninebark">
+                <h3 class="plant-name"><i>Physocarpus opulifolius</i></h3>
+                <p class="plant-common">Purple ninebark</p><p class="family">Rosaceae</p>
+            </div>
+
+            <div class="plant-card" data-common="Potawami plum" data-scientific="Prunus americana" data-family="Rosaceae">
+                <img src="jpg/70potawami_plum.jpg" id="plant-70" alt="Potawami plum">
+                <h3 class="plant-name"><i>Prunus americana</i></h3>
+                <p class="plant-common">Potawami plum</p><p class="family">Rosaceae</p>
+            </div>
+
+            <div class="plant-card" data-common="Apricot" data-scientific="Prunus armeniaca" data-family="Rosaceae">
+                <img src="jpg/71apricot.jpg" id="plant-71" alt="Apricot">
+                <h3 class="plant-name"><i>Prunus armeniaca</i></h3>
+                <p class="plant-common">Apricot</p><p class="family">Rosaceae</p>
+            </div>
+
+            <div class="plant-card" data-common="Plum" data-scientific="Prunus domestica" data-family="Rosaceae">
+                <img src="jpg/72plum.jpg" id="plant-72" alt="Plum">
+                <h3 class="plant-name"><i>Prunus domestica</i></h3>
+                <p class="plant-common">Plum</p><p class="family">Rosaceae</p>
+            </div>
+
+            <div class="plant-card" data-common="Cherry laurel" data-scientific="Prunus laurocerasus" data-family="Rosaceae">
+                <img src="jpg/73cherry_laurel.jpg" id="plant-73" alt="Cherry laurel">
+                <h3 class="plant-name"><i>Prunus laurocerasus</i></h3>
+                <p class="plant-common">Cherry laurel</p><p class="family">Rosaceae</p>
+            </div>
+
+            <div class="plant-card" data-common="Peach" data-scientific="Prunus persica" data-family="Rosaceae">
+                <img src="jpg/74peach.jpg" id="plant-74" alt="Peach">
+                <h3 class="plant-name"><i>Prunus persica</i></h3>
+                <p class="plant-common">Peach</p><p class="family">Rosaceae</p>
+            </div>
+
+            <div class="plant-card" data-common="Flowering cherry" data-scientific="Prunus serrulata" data-family="Rosaceae">
+                <img src="jpg/75flowering_cherry.jpg" id="plant-75" alt="Flowering cherry">
+                <h3 class="plant-name"><i>Prunus serrulata</i></h3>
+                <p class="plant-common">Flowering cherry</p><p class="family">Rosaceae</p>
+            </div>
+
+            <div class="plant-card" data-common="Chokecherry" data-scientific="Prunus virginiana" data-family="Rosaceae">
+                <img src="jpg/76chokecherry.jpg" id="plant-76" alt="Chokecherry">
+                <h3 class="plant-name"><i>Prunus virginiana</i></h3>
+                <p class="plant-common">Chokecherry</p><p class="family">Rosaceae</p>
+            </div>
+
+            <div class="plant-card" data-common="Scarlet firethorn" data-scientific="Pyracantha coccinea" data-family="Rosaceae">
+                <img src="jpg/77scarlet_firethorn.jpg" id="plant-77" alt="Scarlet firethorn">
+                <h3 class="plant-name"><i>Pyracantha coccinea</i></h3>
+                <p class="plant-common">Scarlet firethorn</p><p class="family">Rosaceae</p>
+            </div>
+
+            <div class="plant-card" data-common="Bradford pear" data-scientific="Pyrus calleryana" data-family="Rosaceae">
+                <img src="jpg/78bradford_pear.jpg" id="plant-78" alt="Bradford pear">
+                <h3 class="plant-name"><i>Pyrus calleryana</i></h3>
+                <p class="plant-common">Bradford pear</p><p class="family">Rosaceae</p>
+            </div>
+
+            <div class="plant-card" data-common="Pear" data-scientific="Pyrus communis" data-family="Rosaceae">
+                <img src="jpg/79pear.jpg" id="plant-79" alt="Pear">
+                <h3 class="plant-name"><i>Pyrus communis</i></h3>
+                <p class="plant-common">Pear</p><p class="family">Rosaceae</p>
+            </div>
+
+            <div class="plant-card" data-common="Asian pear" data-scientific="Pyrus pyrifolia" data-family="Rosaceae">
+                <img src="jpg/80asian_pear.jpg" id="plant-80" alt="Asian pear">
+                <h3 class="plant-name"><i>Pyrus pyrifolia</i></h3>
+                <p class="plant-common">Asian pear</p><p class="family">Rosaceae</p>
+            </div>
+
+            <div class="plant-card" data-common="Bumald spirea" data-scientific="Spiraea × bumalda" data-family="Rosaceae">
+                <img src="jpg/81bumald_spirea.jpg" id="plant-81" alt="Bumald spirea">
+                <h3 class="plant-name"><i>Spiraea × bumalda</i></h3>
+                <p class="plant-common">Bumald spirea</p><p class="family">Rosaceae</p>
+            </div>
+
+            <div class="plant-card" data-common="Snowmound" data-scientific="Spiraea nipponica" data-family="Rosaceae">
+                <img src="jpg/82snowmound.jpg" id="plant-82" alt="Snowmound">
+                <h3 class="plant-name"><i>Spiraea nipponica</i></h3>
+                <p class="plant-common">Snowmound</p><p class="family">Rosaceae</p>
+            </div>
+
+            <div class="plant-card" data-common="Bridal wealth" data-scientific="Spiraea × vanhouttei" data-family="Rosaceae">
+                <img src="jpg/83bridal_wealth.jpg" id="plant-83" alt="Bridal wealth">
+                <h3 class="plant-name"><i>Spiraea × vanhouttei</i></h3>
+                <p class="plant-common">Bridal wealth</p><p class="family">Rosaceae</p>
+            </div>
+
+            <div class="plant-card" data-common="Narrowleaf poplar" data-scientific="Populus angustifolia" data-family="Salicaceae">
+                <img src="jpg/84narrowleaf_poplar.jpg" id="plant-84" alt="Narrowleaf poplar">
+                <h3 class="plant-name"><i>Populus angustifolia</i></h3>
+                <p class="plant-common">Narrowleaf poplar</p><p class="family">Salicaceae</p>
+            </div>
+
+            <div class="plant-card" data-common="Cottonwood" data-scientific="Populus fremontii" data-family="Salicaceae">
+                <img src="jpg/85cottonwood.jpg" id="plant-85" alt="Cottonwood">
+                <h3 class="plant-name"><i>Populus fremontii</i></h3>
+                <p class="plant-common">Cottonwood</p><p class="family">Salicaceae</p>
+            </div>
+
+            <div class="plant-card" data-common="Quaking aspen" data-scientific="Populus tremuloides" data-family="Salicaceae">
+                <img src="jpg/86quaking_aspen.jpg" id="plant-86" alt="Quaking aspen">
+                <h3 class="plant-name"><i>Populus tremuloides</i></h3>
+                <p class="plant-common">Quaking aspen</p><p class="family">Salicaceae</p>
+            </div>
+
+            <div class="plant-card" data-common="Sandbar willow" data-scientific="Salix exigua" data-family="Salicaceae">
+                <img src="jpg/87sandbar_willow.jpg" id="plant-87" alt="Sandbar willow">
+                <h3 class="plant-name"><i>Salix exigua</i></h3>
+                <p class="plant-common">Sandbar willow</p><p class="family">Salicaceae</p>
+            </div>
+
+            <div class="plant-card" data-common="Corkscrew willow" data-scientific="Salix matsudana var. tortuosa" data-family="Salicaceae">
+                <img src="jpg/88corkscrew_willow.jpg" id="plant-88" alt="Corkscrew willow">
+                <h3 class="plant-name"><i>Salix matsudana var. tortuosa</i></h3>
+                <p class="plant-common">Corkscrew willow</p><p class="family">Salicaceae</p>
+            </div>
+
+            <div class="plant-card" data-common="Arctic willow" data-scientific="Salix purpurea" data-family="Salicaceae">
+                <img src="jpg/89arctic_willow.jpg" id="plant-89" alt="Arctic willow">
+                <h3 class="plant-name"><i>Salix purpurea</i></h3>
+                <p class="plant-common">Arctic willow</p><p class="family">Salicaceae</p>
+            </div>
+
+            </div>
+    </div>
+
+    <!-- Footer -->
+    <div class="footer">
+        <p>&copy; 2025 Field Botany Guide</p>
+    </div>
+
+    <!-- Search Functionality -->
+    <script>
+        function filterPlants() {
+            var input = document.getElementById('searchBox');
+            var filter = input.value.toLowerCase();
+            var cards = document.getElementsByClassName('plant-card');
+
+            for (var i = 0; i < cards.length; i++) {
+                var card = cards[i];
+                var common = card.getAttribute('data-common').toLowerCase();
+                var scientific = card.getAttribute('data-scientific').toLowerCase();
+                var family = card.getAttribute('data-family').toLowerCase();
+
+                if (common.includes(filter) || scientific.includes(filter) || family.includes(filter)) {
+                    card.style.display = '';
+                } else {
+                    card.style.display = 'none';
+                }
+            }
+        }
+    </script>
+</body>
+</html>
+
+
+
+
+

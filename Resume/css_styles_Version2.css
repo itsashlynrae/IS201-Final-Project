@@ -1,0 +1,15 @@
+/* Simple custom styles for the résumé */
+body {
+  font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+  line-height: 1.4;
+}
+
+header h1 { font-size: 1.8rem; }
+.badge { font-size: 0.85rem; }
+
+/* Print tweaks */
+@media print {
+  nav, footer { display: none !important; }
+  body { color: #000; background: #fff; }
+  main { font-size: 11pt; }
+}
