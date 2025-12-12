@@ -94,7 +94,7 @@ nav a {
     transition: all 0.3s ease;
 }
 
-nav a:last-child {
+nav a.resume-link {
     margin-left: auto;
 }
 
@@ -335,4 +335,87 @@ em {
     text-align: center;
     padding: 20px;
     margin-top: 40px;
+}
+
+/* Responsive Design - Mobile Friendly */
+/* Make images responsive */
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+/* Make iframes (YouTube videos) responsive */
+iframe {
+    max-width: 100%;
+    height: auto;
+    aspect-ratio: 16 / 9;
+}
+
+/* Mobile Navigation - Stack vertically on small screens */
+@media screen and (max-width: 768px) {
+    nav {
+        flex-direction: column;
+        padding: 10px;
+    }
+    
+    nav a {
+        width: 100%;
+        margin: 5px 0;
+        text-align: center;
+    }
+    
+    nav a.resume-link {
+        margin-left: 0;
+        margin-top: 10px;
+        border-top: 2px solid #2e7d32;
+        padding-top: 15px;
+    }
+    
+    .header-section {
+        padding: 20px;
+    }
+    
+    .header-section h1 {
+        font-size: 1.8em;
+    }
+    
+    .header-section p {
+        font-size: 1em;
+    }
+    
+    .main-content {
+        margin: 15px;
+        padding: 20px;
+    }
+    
+    .visualization-section {
+        margin: 20px 10px;
+        padding: 20px;
+    }
+    
+    .plant-grid {
+        grid-template-columns: 1fr;
+        gap: 15px;
+    }
+    
+    #searchBox {
+        width: 90%;
+        font-size: 0.9em;
+    }
+}
+
+/* Tablet and medium screens */
+@media screen and (min-width: 769px) and (max-width: 1024px) {
+    nav {
+        flex-wrap: wrap;
+    }
+    
+    nav a {
+        padding: 8px 15px;
+        font-size: 0.95em;
+    }
+    
+    .plant-grid {
+        grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    }
 }
